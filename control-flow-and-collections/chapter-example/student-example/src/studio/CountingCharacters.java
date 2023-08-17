@@ -1,6 +1,7 @@
 package studio;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CountingCharacters {
@@ -16,7 +17,9 @@ public class CountingCharacters {
                 myString.put(character,1);
             }
         }
-        System.out.println(myString);
+        for(Map.Entry entry: myString.entrySet()){
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
 
     }
 }
