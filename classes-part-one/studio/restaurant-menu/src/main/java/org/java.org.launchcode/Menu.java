@@ -1,27 +1,15 @@
-package org.launchcode;
 
+
+import java.awt.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Menu {
     //private Date lastUpdated;
-    private LocalDate lastUpdated;
-
-
+    private Date lastUpdated;
     private ArrayList<MenuItem> appetizer;
-
-    private ArrayList<MenuItem> dessert;
-
-
-
-    public Menu(ArrayList<MenuItem> appetizer, ArrayList<MenuItem> mainCourse, ArrayList<MenuItem> dessert) {
-        this.lastUpdated =  LocalDate.now();
-        this.appetizer = appetizer;
-        this.mainCourse = mainCourse;
-        this.dessert = dessert;
-    }
-
     private ArrayList<MenuItem> mainCourse;
 
     public ArrayList<MenuItem> getAppetizer() {
@@ -48,29 +36,36 @@ public class Menu {
         this.dessert = dessert;
     }
 
-    public LocalDate getLastUpdated() {
-        return lastUpdated;
-    }
-
-    public void setLastUpdated(LocalDate lastUpdated) {
-        this.lastUpdated = lastUpdated;
-    }
+    private ArrayList<MenuItem> dessert;
 
     public LocalDate getLast() {
         LocalDate last = null;
         return last;
     }
 
+    public Menu(Date d, ArrayList<MenuItem> i) {
+        this.lastUpdated = d;
+    }
 
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+    public Date getLastUpdated() {
+        return lastUpdated;
+    }
 
     public void addMenuItem(MenuItem newItem){
-        this.appetizer.add(newItem);
-        this.dessert.add(newItem);
-        this.mainCourse.add(newItem);
+       this.appetizer.add(newItem);
+       this.dessert.add(newItem);
+       this.mainCourse.add(newItem);
 
     }
 
     public void removeMenuItem(MenuItem removeItem){
-
+        //if(removeItem.isNew())
     }
+
+    //public ArrayList<MenuItem> getItems() {
+//        return items;
+//    }
 }

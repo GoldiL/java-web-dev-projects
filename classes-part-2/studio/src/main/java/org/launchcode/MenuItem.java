@@ -1,16 +1,34 @@
 package org.launchcode;
 
+import org.launchcode.MenuItemCategory;
+
 public class MenuItem {
     private double price;
     private String description;
-    private String category;
+    private MenuItemCategory category;
     private boolean isNew;
 
-    public MenuItem(double p, String d, String c, boolean iN) {
-        this.price = p;
-        this.description = d;
-        this.category = c;
-        this.isNew = iN;
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public MenuItemCategory getCategory() {
+        return category;
+    }
+
+    public boolean isNew() {
+        return isNew;
+    }
+
+    public MenuItem(double price, String description, MenuItemCategory category, boolean isNew) {
+        this.price = price;
+        this.description = description;
+        this.category = category;
+        this.isNew = isNew;
     }
 
     public void setPrice(double price) {
@@ -21,12 +39,18 @@ public class MenuItem {
         this.description = description;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(MenuItemCategory category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return  description + ": $"+price;
     }
 
     public void setNew(boolean aNew) {
         isNew = aNew;
     }
-}
 
+
+}
