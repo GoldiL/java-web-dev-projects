@@ -13,7 +13,7 @@ public class Menu {
 
     private ArrayList<MenuItem> dessert;
 
-
+    private ArrayList<MenuItem> mainCourse;
 
     public Menu(ArrayList<MenuItem> appetizer, ArrayList<MenuItem> mainCourse, ArrayList<MenuItem> dessert) {
         this.lastUpdated =  LocalDate.now();
@@ -22,7 +22,7 @@ public class Menu {
         this.dessert = dessert;
     }
 
-    private ArrayList<MenuItem> mainCourse;
+
 
     public ArrayList<MenuItem> getAppetizer() {
         return appetizer;
@@ -62,7 +62,18 @@ public class Menu {
     }
 
 
+    @Override
+    public String toString() {
 
+        return "Menu{" +
+                "lastUpdated=" + lastUpdated +
+                ", appetizer=" + appetizer +
+                ", dessert=" + dessert +
+                ", mainCourse=" + mainCourse +
+                '}';
+    }
+
+    //adding new item to the newly created Menu
     public void addMenuItem(MenuItem newItem){
         this.appetizer.add(newItem);
         this.dessert.add(newItem);
@@ -70,7 +81,10 @@ public class Menu {
 
     }
 
+    //Removing item from the new menu
     public void removeMenuItem(MenuItem removeItem){
-
+        this.removeMenuItem(removeItem);
     }
+
+
 }
